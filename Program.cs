@@ -4,12 +4,13 @@ using System.Linq;
 
 namespace ShootingDice
 {
-    class Program
+    class Program 
     {
         static void Main(string[] args)
         {
             Player player1 = new Player();
             player1.Name = "Bob";
+            
 
             Player player2 = new Player();
             player2.Name = "Sue";
@@ -25,15 +26,31 @@ namespace ShootingDice
 
             Console.WriteLine("-------------------");
 
-            Player large = new LargeDicePlayer();
+            LargeDicePlayer large = new LargeDicePlayer();
             large.Name = "Bigun Rollsalot";
+
+            SmackTalkingPlayer Justin = new SmackTalkingPlayer();
+            Justin.Name = "Justin";
+            Justin.Taunt = "I remember my first time rolling dice!";
+
+            SmackTalkingPlayer Laura = new SmackTalkingPlayer();
+            Laura.Name = "Laura";
+            Laura.Taunt = "You're going to need more than that!";
 
             player1.Play(large);
 
+            Console.WriteLine("---------------------");
+
+            Laura.Play(Justin);
+
             Console.WriteLine("-------------------");
 
+            OneHigherPlayer Jose = new OneHigherPlayer();
+            Jose.Name = "Jose";
+
+
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large
+                player1, player2, player3, large, Justin, Laura, Jose
             };
 
             PlayMany(players);
@@ -62,7 +79,7 @@ namespace ShootingDice
             {
                 Console.WriteLine("-------------------");
 
-                // Make adjacent players play noe another
+                // Make adjacent players play one another
                 Player player1 = shuffledPlayers[i];
                 Player player2 = shuffledPlayers[i + 1];
                 player1.Play(player2);
