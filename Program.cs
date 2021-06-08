@@ -66,8 +66,11 @@ namespace ShootingDice
 
             Console.WriteLine("-------------------");
 
+            UpperHalfPlayer Brittany = new UpperHalfPlayer();
+            Brittany.Name = "Brittany";
+
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large, Justin, Laura, Jose, John, Bob, Jess
+                player1, player2, player3, large, Justin, Laura, Jose, John, Bob, Jess, Brittany
             };
 
             PlayMany(players);
