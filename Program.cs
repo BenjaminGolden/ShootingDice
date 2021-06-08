@@ -51,10 +51,15 @@ namespace ShootingDice
 
             Console.WriteLine("-------------------");
 
-
+            CreativeSmackTalkingPlayer Bob = new CreativeSmackTalkingPlayer();
+            Bob.Name = "Bob";
+            Bob.TauntList.Add("You suck! Jackass. ");
+            Bob.TauntList.Add("Roll it with your purse!");
+            Bob.TauntList.Add("Do you always lose?");
+            Bob.TauntList.Add("the price is wrong, bitch!");
 
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large, Justin, Laura, Jose, John
+                player1, player2, player3, large, Justin, Laura, Jose, John, Bob
             };
 
             PlayMany(players);
