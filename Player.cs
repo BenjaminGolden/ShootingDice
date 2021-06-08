@@ -6,12 +6,14 @@ namespace ShootingDice
     {
         public string Name { get; set; }
         public int DiceSize { get; set; } = 6;
+       
 
         public virtual int Roll()
         {
             // Return a random number between 1 and DiceSize
             return new Random().Next(DiceSize) + 1;
         }
+       
 
         public virtual void Play(Player other)
         {
