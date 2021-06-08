@@ -37,7 +37,13 @@ namespace ShootingDice
             Laura.Name = "Laura";
             Laura.Taunt = "You're going to need more than that!";
 
-            player1.Play(large);
+            OneHigherPlayer Jose = new OneHigherPlayer();
+            Jose.Name = "Jose";
+
+            HumanPlayer John = new HumanPlayer();
+            John.Name = "John";
+
+            Jose.Play(large);
 
             Console.WriteLine("---------------------");
 
@@ -45,12 +51,10 @@ namespace ShootingDice
 
             Console.WriteLine("-------------------");
 
-            OneHigherPlayer Jose = new OneHigherPlayer();
-            Jose.Name = "Jose";
 
 
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large, Justin, Laura, Jose
+                player1, player2, player3, large, Justin, Laura, Jose, John
             };
 
             PlayMany(players);

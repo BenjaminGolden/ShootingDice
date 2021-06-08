@@ -9,27 +9,14 @@ namespace ShootingDice
     {
         public string Taunt { get; set; }
 
-       public override void Play(Player other)
-        {
-            // Call roll for "this" object and for the "other" object
-            int myRoll = Roll();
-            int otherRoll = other.Roll();
-
-            Console.WriteLine($"{Name} rolls a {myRoll}");
-            Console.WriteLine($"{other.Name} rolls a {otherRoll}");
-            if (myRoll > otherRoll)
-            {
-                Console.WriteLine($"{Name} Wins! {Taunt}");
-            }
-            else if (myRoll < otherRoll)
-            {
-                Console.WriteLine($"{other.Name} Wins! {Taunt}");
-            }
-            else
-            {
-                // if the rolls are equal it's a tie
-                Console.WriteLine("It's a tie");
-            }
+            public override int Roll()
+        {   
+            Console.WriteLine(Taunt);
+            // Return a random number between 1 and DiceSize
+            return new Random().Next(DiceSize) + 1;
         }
+
     }
 }
+
+//override the roll method instead of play. 
