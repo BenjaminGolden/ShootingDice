@@ -9,9 +9,19 @@ namespace ShootingDice
     {
          public override int Roll()
         {
-        Console.WriteLine("What would you like to roll? > ");
-        return int.Parse(Console.ReadLine());
+           
+            try
+            {
+            Console.WriteLine("What would you like to roll? > ");
+            return int.Parse(Console.ReadLine());
+            
+            }
+            catch
+            {
+                Console.WriteLine("please input a number.");
+                return int.Parse(Console.ReadLine());
+                
+            }
         }
-
     }
 }
